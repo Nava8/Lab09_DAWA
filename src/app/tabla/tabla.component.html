@@ -1,0 +1,24 @@
+<div class="container">
+  <h2 class="text-center">Lista de tareas</h2>
+  <table class="table mt-4 table-dark table-overflow table-fixed">
+    <thead>
+      <tr>
+        <th scope="col">Item</th>
+        <th scope="col">Tarea</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tarea of tareas; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td class="text-nowrap">{{ tarea }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="eliminarTarea(i)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <button class="btn btn-primary" (click)="agregarTarea()">Agregar tarea</button>
+  </div>
+</div>
